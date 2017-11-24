@@ -1,0 +1,15 @@
+delete:
+  description: Удалить короткую ссылку
+  operationId: deleteShortUrl
+  tags:
+    - Shortener
+  parameters:
+    - $ref: '#/parameters/requestID'
+    - $ref: '#/parameters/shortUrl'
+  responses:
+    '204':
+      description: Короткая ссылка удалена
+    '400':
+      $ref: '#/responses/BadRequest'
+    '404':
+      $ref: '#/responses/NotFound'

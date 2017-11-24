@@ -1,0 +1,20 @@
+post:
+  description: Создать новую короткую ссылку
+  tags:
+    - Shortener
+  operationId: createShortUrl
+  parameters:
+    - $ref: '#/parameters/requestID'
+    - name: longUrl
+      description: Длинная ссылка
+      in: body
+      required: true
+      schema:
+        $ref: '#/definitions/LongUrl'
+  responses:
+    '201':
+      description: Короткая ссылка создана
+      schema:
+        $ref: '#/definitions/ShortUrl'
+    '400':
+      $ref: '#/responses/BadRequest'
