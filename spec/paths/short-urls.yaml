@@ -22,6 +22,6 @@ post:
     '201':
       description: Короткая ссылка создана
       schema:
-        $ref: '#/definitions/RelativeShortUrl'
+        $ref: '#/definitions/ShortUrl'
     '400':
       $ref: '#/responses/BadRequest'
