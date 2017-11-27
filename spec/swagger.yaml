@@ -1,14 +1,15 @@
 swagger: '2.0'
+host: rbk.mn
 info:
   version: '1.0'
-  title: RBKmoney URL-shortener API
+  title: RBKmoney URL shortener API
   termsOfService: 'http://rbkmoney.com/'
   contact:
     name: RBKmoney support team
     email: tech-support@rbkmoney.com
     url: 'https://api.rbk.money'
   description: |
-    URL-shortener API 
+    URL shortener API 
 schemes:
   - https
 consumes:
@@ -23,9 +24,11 @@ securityDefinitions:
     description: >
       Для аутентификации вызовов мы используем [JWT](https://jwt.io).
       Cоответствующий ключ передается в заголовке.
+
       ```shell
        Authorization: Bearer {TOKENIZATION|PRIVATE_JWT}
       ```
+
       Посмотреть ваш API-ключ вы можете в [личном
       кабинете](https://dashboard.rbk.money/api/key).
       Ключи не разделяются на тестовые и боевые, ваш API ключ открывает доступ
@@ -38,11 +41,24 @@ responses:
   NotFound:
     description: Entity not found
     schema:
-      $ref: '#/definitions/GeneralError'
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
   BadRequest:
     description: Illegal input for operation
     schema:
-      $ref: '#/definitions/LogicError'
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
 parameters:
   requestID:
     name: X-Request-ID
