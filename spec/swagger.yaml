@@ -1,5 +1,6 @@
 swagger: '2.0'
 host: rbk.mn
+basePath: /v1
 info:
   version: '1.0'
   title: RBKmoney URL shortener API
@@ -68,13 +69,12 @@ parameters:
     type: string
     maxLength: 32
     minLength: 1
-  shortUrl:
-    name: shortUrl
+  shortUrlID:
+    name: shortUrlID
     in: path
-    description: Короткая ссылка
+    description: Идентификатор короткой ссылки
     required: true
     type: string
-    format: url
 tags:
   - name: Shortener 
     x-displayName: Короткие ссылки

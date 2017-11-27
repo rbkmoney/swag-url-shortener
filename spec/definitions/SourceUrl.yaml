@@ -1,7 +1,7 @@
 type: object
 required:
-  - sourceUri
+  - sourceUrl
 properties:
-  sourceUri:
+  sourceUrl:
     type: string
     format: uri

@@ -1,0 +1,32 @@
+get:
+  description: Получить данные созданной короткой ссылки
+  operationId: getRelativeShortUrl
+  tags:
+    - Shortener
+  parameters:
+    - $ref: '#/parameters/requestID'
+    - $ref: '#/parameters/shortUrlID'
+  responses:
+    '200':
+      description: Данные короткой ссылки
+      schema:
+        $ref: '#/definitions/RelativeShortUrl'
+      '400':
+        $ref: '#/responses/BadRequest'
+      '404':
+        $ref: '#/responses/NotFound'
+delete:
+  description: Удалить короткую ссылку
+  operationId: deleteRelativeShortUrl
+  tags:
+    - Shortener
+  parameters:
+    - $ref: '#/parameters/requestID'
+    - $ref: '#/parameters/shortUrlID'
+  responses:
+    '204':
+      description: Короткая ссылка удалена
+    '400':
+      $ref: '#/responses/BadRequest'
+    '404':
+      $ref: '#/responses/NotFound'

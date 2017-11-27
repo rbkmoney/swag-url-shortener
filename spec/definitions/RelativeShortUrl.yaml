@@ -1,11 +1,18 @@
 type: object
 required:
-  - relativeUri
-  - lifetime
+  - sourceUrl
+  - deadline
 properties:
-  relativeUri:
+  id:
+    type: string
+    readOnly: true
+  relativeShortUrl:
     type: string
     format: uri
-  lifetime:
+    readOnly: true
+  sourceUrl:
+    type: string
+    format: uri
+  deadline:
     type: string
     format: date-time

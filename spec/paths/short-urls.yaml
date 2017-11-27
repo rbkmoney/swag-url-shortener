@@ -12,9 +12,10 @@ post:
       schema:
         type: object
         properties:
-          sourceUri:
-            $ref: '#/definitions/SourceUri'
-          lifetime:
+          sourceUrl:
+            type: string
+            format: uri
+          deadline:
             type: string
             format: date-time
   responses:
