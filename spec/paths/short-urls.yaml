@@ -5,16 +5,22 @@ post:
   operationId: createShortUrl
   parameters:
     - $ref: '#/parameters/requestID'
-    - name: longUrl
-      description: Длинная ссылка
+    - name: shortUrlParams
+      description: Параметры для создания короткой ссылки
       in: body
       required: true
       schema:
-        $ref: '#/definitions/LongUrl'
+        type: object
+        properties:
+          sourceUri:
+            $ref: '#/definitions/SourceUri'
+          lifetime:
+            type: string
+            format: date-time
   responses:
     '201':
       description: Короткая ссылка создана
       schema:
-        $ref: '#/definitions/ShortUrl'
+        $ref: '#/definitions/RelativeShortUrl'
     '400':
       $ref: '#/responses/BadRequest'

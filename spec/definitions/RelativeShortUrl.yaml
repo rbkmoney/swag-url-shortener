@@ -1,0 +1,11 @@
+type: object
+required:
+  - relativeUri
+  - lifetime
+properties:
+  relativeUri:
+    type: string
+    format: uri
+  lifetime:
+    type: string
+    format: date-time
