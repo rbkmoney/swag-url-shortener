@@ -1,7 +1,0 @@
-type: object
-required:
-  - sourceUrl
-properties:
-  sourceUrl:
-    type: string
-    format: uri

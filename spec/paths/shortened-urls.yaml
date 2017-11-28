@@ -2,10 +2,10 @@ post:
   description: Создать новую короткую ссылку
   tags:
     - Shortener
-  operationId: createShortUrl
+  operationId: shortenUrl
   parameters:
     - $ref: '#/parameters/requestID'
-    - name: shortUrlParams
+    - name: shortenedUrlParams
       description: Параметры для создания короткой ссылки
       in: body
       required: true
@@ -22,6 +22,6 @@ post:
     '201':
       description: Короткая ссылка создана
       schema:
-        $ref: '#/definitions/ShortUrl'
+        $ref: '#/definitions/ShortenedUrl'
     '400':
       $ref: '#/responses/BadRequest'

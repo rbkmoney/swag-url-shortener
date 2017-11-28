@@ -69,8 +69,8 @@ parameters:
     type: string
     maxLength: 32
     minLength: 1
-  shortUrlID:
-    name: shortUrlID
+  shortenedUrlID:
+    name: shortenedUrlID
     in: path
     description: Идентификатор короткой ссылки
     required: true

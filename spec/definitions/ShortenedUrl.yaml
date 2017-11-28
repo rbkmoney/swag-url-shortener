@@ -1,15 +1,15 @@
 type: object
 required:
+  - id
+  - shortenedUrl
   - sourceUrl
   - deadline
 properties:
   id:
     type: string
-    readOnly: true
-  shortUrl:
+  shortenedUrl:
     type: string
     format: uri
-    readOnly: true
   sourceUrl:
     type: string
     format: uri
