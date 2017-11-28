@@ -15,7 +15,7 @@ post:
           sourceUrl:
             type: string
             format: uri
-          deadline:
+          expiresAt:
             type: string
             format: date-time
   responses:

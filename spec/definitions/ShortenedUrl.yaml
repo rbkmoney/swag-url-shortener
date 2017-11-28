@@ -3,7 +3,7 @@ required:
   - id
   - shortenedUrl
   - sourceUrl
-  - deadline
+  - expiresAt
 properties:
   id:
     type: string
@@ -13,6 +13,6 @@ properties:
   sourceUrl:
     type: string
     format: uri
-  deadline:
+  expiresAt:
     type: string
     format: date-time
