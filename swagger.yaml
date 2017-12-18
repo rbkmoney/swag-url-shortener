@@ -85,14 +85,7 @@ paths:
           in: body
           required: true
           schema:
-            type: object
-            properties:
-              sourceUrl:
-                type: string
-                format: uri
-              expiresAt:
-                type: string
-                format: date-time
+            $ref: '#/definitions/ShortenedUrlParams'
       responses:
         '201':
           description: Короткая ссылка создана
@@ -147,6 +140,18 @@ definitions:
       shortenedUrl:
         type: string
         format: uri
+      sourceUrl:
+        type: string
+        format: uri
+      expiresAt:
+        type: string
+        format: date-time
+  ShortenedUrlParams:
+    type: object
+    required:
+      - sourceUrl
+      - expiresAt
+    properties:
       sourceUrl:
         type: string
         format: uri
